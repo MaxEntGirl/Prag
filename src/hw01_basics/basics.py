@@ -25,7 +25,7 @@ def hello_world():
     >>> hello_world()
     Hello, world!
     """
-    pass
+    print("Hello, world!")
 
 
 def expon(x, y):
@@ -37,7 +37,7 @@ def expon(x, y):
     >>> expon(2, -3)
     0.125
     """
-    pass
+    print(x**y)
 
 
 def dividable(x,y):
@@ -49,7 +49,10 @@ def dividable(x,y):
     >>> dividable(15, -3)
     True
     """
-    pass
+    if (x % y == 0):
+        print("True")
+    else:
+        print("False")
 
 #===STRING OPERATIONS====================================================
 
@@ -58,7 +61,7 @@ def hello(name):
     >>> hello("Ludwig")
     Hello, Ludwig!
     """
-    pass
+    print("Hello,", name + "!")
 
 
 def wordlength(w):
@@ -70,7 +73,7 @@ def wordlength(w):
     >>> wordlength('b')
     1
     """
-    pass
+    print(len(w))
 
 
 def caps(w):
@@ -84,7 +87,7 @@ def caps(w):
     >>> caps("Waschbär")
     'WASCHBÄR'
     """
-    pass
+    print ( "'"+ w.upper() + "'" )
 
 def substring(v, w):
     """ Return True or False whether v is a substring of w.
@@ -95,7 +98,10 @@ def substring(v, w):
     >>> substring("Au", "Kaufrausch")
     False
     """
-    pass # checking whether there was a hit
+    if (w.find(v) == -1):
+        print("False")
+    else:
+        print("True")
 
 
 #===LIST OPERATIONS====================================================
@@ -109,7 +115,10 @@ def thirdElem(liste):
     >>> thirdElem(listTwo)
     2
     """
-    pass
+    if (str(liste[2]).isdigit()):
+        print(liste[2])
+    else:
+        print("'"+ liste[2] +"'")
 
 
 def lastElem(liste):
@@ -119,7 +128,10 @@ def lastElem(liste):
     >>> lastElem(listTwo)
     55
     """
-    pass
+    if (str(liste[-1]).isdigit()):
+        print(liste[-1])
+    else:
+        print("'"+ liste[-1] + "'")
 
 
 def firstHalf(liste):
@@ -130,7 +142,7 @@ def firstHalf(liste):
     >>> firstHalf(listTwo)
     [1, 1, 2, 3, 5]
     """
-    pass
+    print(liste[0:len(liste)//2])
 
 
 def concatenate(liste1, liste2):
@@ -141,7 +153,8 @@ def concatenate(liste1, liste2):
     >>> concatenate(listTwo, listOne)
     [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 'this', 'is', 'a', 'simple', 'list']
     """
-    pass
+    newlist = liste1 + liste2
+    print(newlist[0:len(newlist)])
 
 #===LOOP OPERATIONS====================================================
 
@@ -155,7 +168,10 @@ def isNegative(k):
     >>> isNegative(0)
     False
     """
-    pass
+    if (k >= 0):
+        print("False")
+    else:
+        print("True")
 
 
 def printElements(liste):
@@ -167,7 +183,9 @@ def printElements(liste):
     simple
     list
     """
-    pass
+    for i in range(len(liste)):
+        print (liste[i])
+
 
 def countToZero(k):
     """ Print out the numbers counting from k to 0, excluding 0.
@@ -182,7 +200,15 @@ def countToZero(k):
     -1
     >>> countToZero(0)
     """
-    pass
+    i = 0
+    if (k > 0):
+        while (i < k):
+            print(k - i)
+            i+=1
+    else:
+        while (i > k):
+            print(k - i)
+            i-=1
 
 
 #===REGULAR EXPRESSIONS====================================================
@@ -200,7 +226,11 @@ def noVowels(w):
     True
     """
     #rex = re.compile("[aeiouAIEOU]")
-    pass
+    rex = re.compile("[aeiouAIEOU]")
+    if (re.search(rex, w)):
+        print ('False')
+    else:
+        print ('True')
   
   
 def umlautsAndPunct(w):
@@ -215,7 +245,11 @@ def umlautsAndPunct(w):
     >>> umlautsAndPunct("Flynn Lynch? Gräbt Glück")
     False
     """
-    pass
+    rex = re.compile("[äöüÄÖÜ]+.*[.!?]$")
+    if (re.search(rex, w)):
+        print ('True')
+    else:
+        print ('False')
     
 #=======================================================
 
