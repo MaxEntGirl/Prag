@@ -50,9 +50,9 @@ def dividable(x,y):
     True
     """
     if (x % y == 0):
-        print("True")
+        return True
     else:
-        print("False")
+        return False
 
 #===STRING OPERATIONS====================================================
 
@@ -99,9 +99,9 @@ def substring(v, w):
     False
     """
     if (w.find(v) == -1):
-        print("False")
+        return False
     else:
-        print("True")
+        return True
 
 
 #===LIST OPERATIONS====================================================
@@ -169,10 +169,9 @@ def isNegative(k):
     False
     """
     if (k >= 0):
-        print("False")
+        return False
     else:
-        print("True")
-
+        return True
 
 def printElements(liste):
     """ print each element in liste. You can use a for-loop for this problem.
@@ -228,9 +227,9 @@ def noVowels(w):
     #rex = re.compile("[aeiouAIEOU]")
     rex = re.compile("[aeiouAIEOU]")
     if (re.search(rex, w)):
-        print ('False')
+        return False
     else:
-        print ('True')
+        return True
   
   
 def umlautsAndPunct(w):
@@ -247,9 +246,9 @@ def umlautsAndPunct(w):
     """
     rex = re.compile("[äöüÄÖÜ]+.*[.!?]$")
     if (re.search(rex, w)):
-        print ('True')
+        return True
     else:
-        print ('False')
+        return False
     
 #=======================================================
 
