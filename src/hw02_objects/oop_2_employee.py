@@ -23,15 +23,19 @@ class Employee:
     """
     # constructor
     def __init__ (self, nam, geb, ges):
+        # werden Name, Geburtzdatung, Geschlecht gesetzt.
         self.Name = nam
         self.Geburtzdatung = geb
         self.Geschlecht = ges
     # Methods
     def change_name(self, nam):
+        # Mit der Methode change_name  wird der Name geändert
         self.Name = nam
     def set_addresse(self, add):
+        # mit Methode set_addresse wird die Adresse geändert. 
         self.Addresse = add
     def set_familienstand(self, fam):
+        # Die Methode set_famillienstand setzt den Famillienstand und bestimmt die Steuerklasse (vereinfacht: 1 vs. 3) 
         self.Fam = fam
         if(self.Fam == "ledig"):
             self.Steuer = "Klassen 1"
@@ -40,11 +44,14 @@ class Employee:
         else:
             raise ValueError
     def set_gehalt(self, geh, pos):
+        # Mit set_gehalt wird das Gehalt gesetzt. 
         self.Gehalt = geh
         self.Position = pos
     def raise_gehalt(self, pozent):
+        # Mit raise_gehalt wird das Gehalt um eine Prozentzahl erhöht.
         self.Gehalt = self.Gehalt + self.Gehalt * pozent/100
     def __str__ (self):
+        # Alle Informationen werden bei Aufruf als string zurückgegben
         res = "*** Employee Information ***\n"
         res += "Name: " + str(self.Name) + "\n"
         res += "Geschlecht: " + str(self.Geschlecht) + "\n"
