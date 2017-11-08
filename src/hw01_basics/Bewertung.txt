@@ -1,0 +1,18 @@
+basics.hello_world              OK        1/1 points
+basics.expon                    OK        1/1 points
+basics.dividable                OK        1/1 points
+basics.hello                    OK        1/1 points
+basics.wordlength               OK        1/1 points
+basics.caps                     OK        1/1 points
+basics.substring                OK        1/1 points
+basics.thirdElem                OK        1/1 points
+basics.lastElem                 OK        1/1 points
+basics.firstHalf                OK        1/1 points
+basics.concatenate              OK        1/1 points
+basics.isNegative               OK        1/1 points
+basics.printElements            OK        1/1 points
+basics.countToZero              OK        1/1 points
+basics.noVowels                 OK        1/1 points
+basics.umlautsAndPunct          OK        1/1 points
+####################################
+TOTAL: 16/16 points

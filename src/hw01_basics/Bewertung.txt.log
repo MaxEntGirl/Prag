@@ -1,0 +1,237 @@
+#####################
+MODULE: basics.py
+#####################
+
+Trying:
+    caps("ice")
+Expecting:
+    'ICE'
+ok
+Trying:
+    caps("Tiger")
+Expecting:
+    'TIGER'
+ok
+Trying:
+    caps("$lim shady")
+Expecting:
+    '$LIM SHADY'
+ok
+Trying:
+    caps("Waschbär")
+Expecting:
+    'WASCHBÄR'
+ok
+Trying:
+    concatenate(listOne, listTwo)
+Expecting:
+    ['this', 'is', 'a', 'simple', 'list', 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+ok
+Trying:
+    concatenate(listTwo, listOne)
+Expecting:
+    [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 'this', 'is', 'a', 'simple', 'list']
+ok
+Trying:
+    countToZero(3)
+Expecting:
+    3
+    2
+    1
+ok
+Trying:
+    countToZero(-2)
+Expecting:
+    -2
+    -1
+ok
+Trying:
+    countToZero(0)
+Expecting nothing
+ok
+Trying:
+    dividable(15, 3)
+Expecting:
+    True
+ok
+Trying:
+    dividable(15, 6)
+Expecting:
+    False
+ok
+Trying:
+    dividable(15, -3)
+Expecting:
+    True
+ok
+Trying:
+    expon(2, 3)
+Expecting:
+    8
+ok
+Trying:
+    expon(-2, 3)
+Expecting:
+    -8
+ok
+Trying:
+    expon(2, -3)
+Expecting:
+    0.125
+ok
+Trying:
+    firstHalf(listOne)
+Expecting:
+    ['this', 'is']
+ok
+Trying:
+    firstHalf(listTwo)
+Expecting:
+    [1, 1, 2, 3, 5]
+ok
+Trying:
+    hello("Ludwig")
+Expecting:
+    Hello, Ludwig!
+ok
+Trying:
+    hello_world()
+Expecting:
+    Hello, world!
+ok
+Trying:
+    isNegative(-2)
+Expecting:
+    True
+ok
+Trying:
+    isNegative(3)
+Expecting:
+    False
+ok
+Trying:
+    isNegative(0)
+Expecting:
+    False
+ok
+Trying:
+    lastElem(listOne)
+Expecting:
+    'list'
+ok
+Trying:
+    lastElem(listTwo)
+Expecting:
+    55
+ok
+Trying:
+    noVowels("Neu-Halledau")
+Expecting:
+    False
+ok
+Trying:
+    noVowels("Öl")
+Expecting:
+    True
+ok
+Trying:
+    noVowels("Krk")
+Expecting:
+    True
+ok
+Trying:
+    noVowels("H00l4 h00p")
+Expecting:
+    True
+ok
+Trying:
+    printElements(listOne)
+Expecting:
+    this
+    is
+    a
+    simple
+    list
+ok
+Trying:
+    substring("art", "Earth")
+Expecting:
+    True
+ok
+Trying:
+    substring("de 1", "Die Wilde 13")
+Expecting:
+    True
+ok
+Trying:
+    substring("Au", "Kaufrausch")
+Expecting:
+    False
+ok
+Trying:
+    thirdElem(listOne)
+Expecting:
+    'a'
+ok
+Trying:
+    thirdElem(listTwo)
+Expecting:
+    2
+ok
+Trying:
+    umlautsAndPunct("Motörhead!")
+Expecting:
+    True
+ok
+Trying:
+    umlautsAndPunct("Yoko Ono schwimmt im Mississipi")
+Expecting:
+    False
+ok
+Trying:
+    umlautsAndPunct("Wubba Lubba dub dub!")
+Expecting:
+    False
+ok
+Trying:
+    umlautsAndPunct("Flynn Lynch? Gräbt Glück")
+Expecting:
+    False
+ok
+Trying:
+    wordlength("excalibur")
+Expecting:
+    9
+ok
+Trying:
+    wordlength("")
+Expecting:
+    0
+ok
+Trying:
+    wordlength('b')
+Expecting:
+    1
+ok
+1 items had no tests:
+    basics
+16 items passed all tests:
+   4 tests in basics.caps
+   2 tests in basics.concatenate
+   3 tests in basics.countToZero
+   3 tests in basics.dividable
+   3 tests in basics.expon
+   2 tests in basics.firstHalf
+   1 tests in basics.hello
+   1 tests in basics.hello_world
+   3 tests in basics.isNegative
+   2 tests in basics.lastElem
+   4 tests in basics.noVowels
+   1 tests in basics.printElements
+   3 tests in basics.substring
+   2 tests in basics.thirdElem
+   4 tests in basics.umlautsAndPunct
+   3 tests in basics.wordlength
+41 tests in 17 items.
+41 passed and 0 failed.
+Test passed.
