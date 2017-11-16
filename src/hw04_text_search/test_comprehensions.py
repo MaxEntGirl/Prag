@@ -1,5 +1,5 @@
 import unittest
-from hw04_text_search.comprehensions_solution import *
+from hw04_text_search.comprehensions import *
 
 class TestComprehensions(unittest.TestCase):
 
