@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from ex01_text_search.text_vectors import DocumentCollection, SearchEngine
+from hw04_text_search.text_vectors import DocumentCollection, SearchEngine
 
 def main(argv):
     parser = argparse.ArgumentParser()
