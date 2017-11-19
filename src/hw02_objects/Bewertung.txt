@@ -1,0 +1,42 @@
+Allgemeine Anmerkungen: 
+***********************
+
+Korrektheit und Vollständigkeit:
+>------------------------------<
+"Sind die Lösungen zu allen Aufgaben korrekt und vollständig, insbesondere:
+- läuft das Programm in einer angemessenen Zeit?
+- läuft das Programm mit angemessenem Ressourcenbedarf?
+
+    Keine Probleme.
+
+Programmlesbarkeit:
+>-----------------<
+"Ist der Programmcode gut nachvollziehbar, insbesondere:
+- ist der Code gut strukturiert und für die Aufgabe angemessenen?
+- ist die Dokumentation klar und verständlich?
+- sind die Bezeichner (Variablen, Funktionen, etc.) aussagekräftig?"
+
+    Empfohlene Konvention: Instanzvariablen klein schreiben.
+    (nicht gemacht in oop_2_employee.py)
+    Siehe dazu:
+    https://www.python.org/dev/peps/pep-0008/#method-names-and-instance-variables
+
+Aufgabe 1:
+Bank account class (5/5 Punkte)
+---------------------
+a) OK
+b) OK
+c) OK
+d) OK
+e) OK
+#####################
+Exercise 2:
+Employee class (4/4 Punkte)
+---------------------
+a) OK
+   Attribute (Adresse,Fam,Steuer,Gehalt,Position) besser alle bereits im Konstruktor initialisieren, z.B. mit None
+b) OK
+   Ein bisschen mehr Output zur Verdeutlichung der Zwischenschritte wäre wünschenswert gewesen.
+c) OK
+
+Punkte: 9 von 9
