@@ -77,26 +77,6 @@ class PerceptronClassifierTest(TestCase):
         small_collection_do_update = DocumentCollection.from_document_list(do_update_docs)
         self.small_instance_list_do_update = [DataInstance.from_document(doc, self.small_dataset_train_1.feature_set) for doc in small_collection_do_update.all_documents()]
 
-    def test_01_from_file_01(self):
-        """Verify that a classifier can be constructed from a file with weights."""
-        classifier = PerceptronClassifier({'highly': 1, 'boring': -1})
-        classifier.save('data/ex03_from_file_test.model')
-        classifier = PerceptronClassifier.from_file('data/ex03_from_file_test.model')
-        if classifier is None:
-            self.fail(msg="Constructing classifier from file failed: from_file returned None")
-        expected_weights = {'highly': 1, 'boring': -1}
-        self.assertEqual(classifier.weights, expected_weights)
-
-    def test_01_from_file_02(self):
-        """Verify that a classifier can be constructed from a file with weights."""
-        classifier = PerceptronClassifier({'hello': 1, 'bye': -1})
-        classifier.save('data/ex03_from_file_test.model')
-        classifier = PerceptronClassifier.from_file('data/ex03_from_file_test.model')
-        if classifier is None:
-            self.fail(msg="Constructing classifier from file failed: from_file returned None")
-        expected_weights = {'hello': 1, 'bye': -1}
-        self.assertEqual(classifier.weights, expected_weights)
-
     def test_02_for_dataset_01(self):
         """Verify that a classifier can be constructed with initial weights for a fiven dataset."""
         expected_weights = {'highly': 0, 'boring': 0}
