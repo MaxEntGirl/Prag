@@ -1,0 +1,12 @@
+hw03_documents.test_documents.TextDocumentTest.testTokenizer               OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testConstructor             OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testToString                OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testWordOverlap             OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testFromFileMethod          OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testTokenizer_hidden        OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testConstructor_hidden      OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testToString_hidden         OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testWordOverlap_hidden      OK        1/1 points
+hw03_documents.test_documents.TextDocumentTest.testFromFileMethod_hidden   OK        1/1 points
+####################################
+TOTAL: 10/10 points
