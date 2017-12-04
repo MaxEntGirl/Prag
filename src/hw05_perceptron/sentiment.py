@@ -28,7 +28,7 @@ def load_reviews():
 
 def nltk_movie_review_accuracy(num_iterations):
     """ Try different number of features, and optimize number of training iterations."""
-    return 0,0 # TODO: Exercise 4: remove line
+    # Exercise 4: remove line
     (training_documents, dev_documents, test_documents) = load_reviews()
 
     best_development_accuracy = 0.0
@@ -44,9 +44,9 @@ def nltk_movie_review_accuracy(num_iterations):
         # Development set
         development_set = Dataset.from_document_collection(dev_documents, feature_set=training_set.feature_set)
 
-        # Train classifier
+        # Train classifier # Exercise 4: train the classifier
         classifier = PerceptronClassifier.for_dataset(training_set)
-        pass # TODO: Exercise 4: train the classifier
+        classifier.train(training_set, development_set,num_iterations)
 
         # Accuracies of classifier with n features
         train_accuracy = classifier.test_accuracy(training_set)

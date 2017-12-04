@@ -18,32 +18,59 @@ class PerceptronClassifier:
             return cls(weights)
 
     @classmethod
-    def for_dataset(cls, dataset): # TODO
+    def for_dataset(cls, dataset): # Exercise 1
         """
         Initialize PerceptronClassifier for dataset. A classifier that
         is constructed with this method still needs to be trained..
         """
-        pass # TODO: Exercise 1
+        #print(dataset.feature_set)
+        #print(dataset.instance_list)
+
+        weights = {feature:0 for feature in dataset.feature_set}
+
+        return cls(weights)
 
 
-    def prediction(self, counts): # TODO
+    def prediction(self, counts): # Exercise 2
         """
         Return True if prediction for counts is ham, False if prediction is spam
         counts: Bag of words representation of email
         """
-        pass  # TODO: Exercise 2
+        #print("count:", counts)
+        #print(self.weights)
+        sum = 0
+        for key in counts:
+            sum = counts[key] * self.weights[key] + sum
+        if sum > 0:
+            return True
+        else:
+            return False
 
-    def update(self, instance): # TODO
+    def update(self, instance): # Exercise 3
         """
         Perform perceptron update, if the wrong label is predicted.
         Return a boolean value indicating whether an update was performed.
         """
+        # Exercise 3: Replace with correct calculation of error
+
         predicted_output = self.prediction(instance.feature_counts)
-        error = 0 # TODO: Exercise 3: Replace with correct calculation of error
+        #print(predicted_output)
+        #print(instance.label)
+        if predicted_output == True and instance.label == False:
+            error = 1
+        elif predicted_output == False and instance.label == True:
+            error = -1
+        else:
+            error = 0
+
+        # Exercise 3: Replace pass with update of feature weights
+        #print(error)
+
         do_update = error !=0
         if do_update:
             for feature, count in instance.feature_counts.items():
-                pass # TODO: Exercise 3: Replace pass with update of feature weights
+                self.weights[feature] = self.weights[feature] - error * count
+                #print(feature, count)
         return do_update
 
     def training_iteration(self, dataset):

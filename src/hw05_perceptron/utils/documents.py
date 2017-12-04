@@ -21,7 +21,7 @@ class TextDocument:
 
     @classmethod
     def from_file(cls, filename, label=True):
-        with open(filename, 'r', encoding='ISO-8859-1') as myfile: # TODO: change file encoding to utf8
+        with open(filename, 'r', encoding='ISO-8859-1') as myfile: # change file encoding to utf8
             text=myfile.read().strip()
         return cls(text, filename, label)
 
