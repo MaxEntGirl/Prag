@@ -21,9 +21,9 @@ class ClassificationTest(TestCase):
 
     def test_02a_calc_sims(self):
         test_doc = TextDocument.from_file(dir_test+'alt.atheism/53068','alt.atheism')
-        pred_similarities=[(1.1364237808503724e-05, 'comp.windows.x'), (1.491533681154529e-05, 'comp.sys.mac.hardware')]
+        pred_similarities=[(0.17195346816818702, 'alt.atheism'), (0.17159656563946662, 'alt.atheism')]
         train_docs = classifier.doc_collection.docid_to_doc.values()
-        similarities = sorted(classifier.calculate_similarities(test_doc,train_docs))[:2]
+        similarities = sorted(classifier.calculate_similarities(test_doc,train_docs),reverse=True)[:2]
         
         for i in similarities: #check format
             self.assertTrue(len(i) == 2)
