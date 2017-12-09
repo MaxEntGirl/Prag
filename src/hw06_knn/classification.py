@@ -77,11 +77,15 @@ class KNNClassifier:
 
     def choose_one(self,labels) :
         """returns unique label, assumes that labels are ordered from nearest to farthest"""
-        #TODO Exercise 1: Reduce k until you find a unique winner
+        # Exercise 1: Reduce k until you find a unique winner
         counts = Counter(labels)
         winner, winner_count = counts.most_common(1)[0]
         num_winners = len([count for count in counts.values() if count == winner_count])
-        pass    #<-- TODO: replace&complete: The winning label has to be found and returned
+        # replace&complete: The winning label has to be found and returned
+        if num_winners == 1:
+            return winner
+        else:
+            return self.choose_one(labels[:-1])
 
     def classify(self, test_files):
         '''predicts labels for given test files'''
@@ -100,30 +104,41 @@ class KNNClassifier:
 
     def calculate_similarities(self,test_doc,train_docs):
         #Exercise 2.1)
-        #TODO calculate similarities between test and train documents and label them [(similarity, label),...]
-        similarities=[]    #<-- TODO: replace/complete it
+        # calculate similarities between test and train documents and label them [(similarity, label),...]
+        #self.doc_collection.cosine_similarity(test_doc, train_docs)
+        similarities=[(self.doc_collection.cosine_similarity(test_doc, train_doc),test_doc.category ) for train_doc in train_docs]    # replace/complete it
         return similarities
     
     def order_nearest_to_farthest(self,similarities):
         #Exercise 2.2)
-        #TODO order the pairs of similarity and label from most similar to less similar
-        sorted_similarities=[] #<-- TODO: replace with correctly sorted list
+        # order the pairs of similarity and label from most similar to less similar
+        # sorted_similarities= sorted(similarities, reverse=True) # replace with correctly sorted list
+        sorted_similarities= sorted(similarities, key=lambda x: x[0], reverse=True)
         return sorted_similarities
 
     def labels_k_closest(self,sorted_similarities):
         #Exercise 2.3)
-        #TODO find k closest labels 
-        k_nearest_labels=[] #<-- TODO: replace
+        # find k closest labels
+        k_nearest_labels=[label for _, label in sorted_similarities[:self.n_neighbors]] # replace
         return k_nearest_labels
 
     def append_pred_label(self,results,k_nearest_labels):
-        #Exercise 2.4)
-        #TODO append unique predicted label to results
-        #results.append()  #<-- TODO: complete
-        pass
+        # Exercise 2.4)
+        # append unique predicted label to results
+        results.append(self.choose_one(k_nearest_labels))  # complete
 
     def get_accuracy(self, gold, predicted):
         """ returns the accurracy of this classifier on a given test set."""
-        #TODO: Exercise 3: calculate accuracy
-        pass
+        # Exercise 3: calculate accuracy
+        i = 0
+        j = 0
+        for labels in gold:
+            if labels == predicted[i]:
+                j +=1
+            i +=1
+        return j / i * 100
+
+
+
+
 
