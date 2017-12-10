@@ -106,7 +106,7 @@ class KNNClassifier:
         #Exercise 2.1)
         # calculate similarities between test and train documents and label them [(similarity, label),...]
         #self.doc_collection.cosine_similarity(test_doc, train_docs)
-        similarities=[(self.doc_collection.cosine_similarity(test_doc, train_doc),test_doc.category ) for train_doc in train_docs]    # replace/complete it
+        similarities=[(self.doc_collection.cosine_similarity(test_doc, train_doc),train_doc.category ) for train_doc in train_docs]    # replace/complete it
         return similarities
     
     def order_nearest_to_farthest(self,similarities):
