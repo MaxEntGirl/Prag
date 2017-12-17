@@ -12,20 +12,49 @@ class Reader:
         self.vector_spaced_data = self.data_to_vectorspace()
 
     def get_lines(self):
-        #TODO return list of courses from file
-        pass
+        # return list of courses from file
+        file = open(self.path, 'r')
+        courselist = []
+        for line in file:
+            courselist.append(line.rstrip())
+        file.close()
+        return courselist
+
+
     def normalize_word(self,word):
-        #TODO normalize word by lower casing and deleting punctuation from word
-        #TODO use set of punctuation symbols self.punctuation
-        pass
+        # normalize word by lower casing and deleting punctuation from word
+        # use set of punctuation symbols self.punctuation
+        # print(self.punctuation)
+        word = word.lower()
+        for punkt in self.punctuation:
+            word = word.replace(punkt,'')
+        return word
+
     def get_vocabulary(self):
-        #TODO return list of unique words from file and sort them alphabetically
-        pass
+        # return list of unique words from file and sort them alphabetically
+        vacabulary = []
+        for line in self.courses:
+            for word in line.split(' '):
+                word = self.normalize_word(word)
+                vacabulary.append(word)
+        tokens = set(vacabulary)
+        tokens = sorted(tokens)
+        return tokens
+
 
     def vectorspaced(self,course):
-        #TODO represent course by one-hot vector: vector filled with 0s, except for a 1 at the position associated with word in vocabulary
-        #TODO length of vector should be equal vocabulary size
-        hot_one_vectors = [] #<-- TODO: replace 
+        # represent course by one-hot vector: vector filled with 0s, except for a 1 at the position associated with word in vocabulary
+        # length of vector should be equal vocabulary size
+
+        hot_one_vectors = []  # <-- replace
+        course = self.normalize_word(course)
+        courselist = course.split(' ')
+        for fach in self.vocabulary:
+            if fach in courselist:
+                hot_one_vectors.append(1)
+            else:
+                hot_one_vectors.append(0)
+
         return array(hot_one_vectors)
 
     def data_to_vectorspace(self):
@@ -39,7 +68,11 @@ class Kmeans:
         self.dist = dist
 
     def nltk_cluster(self,data):
-        #TODO use NLTK KMeansClusterer to cluster the data, return the list of clusters for given data
-        pass
+        # use NLTK KMeansClusterer to cluster the data, return the list of clusters for given data
+
+        clusterer = KMeansClusterer(self.k, self.dist)
+        clusters = clusterer.cluster(data, True)
+        return clusters
+
 
 
