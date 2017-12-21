@@ -18,8 +18,11 @@ class LangGuesserTest(TestCase):
 
     def test_01_models(self):
         language_model_cfd = self.langModeler.build_language_models()
-        first_outcomes = list(language_model_cfd['English'].items())[:3]
-        self.assertEqual(first_outcomes, [('u', 183), ('n', 668), ('i', 652)])
+        outcomes = list(language_model_cfd['English'].items())
+        
+        self.assertTrue(('u', 183) in outcomes) 
+        self.assertTrue(('n', 668) in outcomes)
+        self.assertTrue(('i', 652) in outcomes)
 
     def test_02_guess(self):
         text1 = "Peter had been to the office before they arrived."
@@ -33,8 +36,10 @@ class LangGuesserTest(TestCase):
 
     def test_03_bigram_models(self):
         language_model_bigram_cfd = self.langBigramModeler.build_language_models()
-        first_outcomes = list(language_model_bigram_cfd['English'].items())[:3]
-        self.assertEqual(first_outcomes,  [(('u', 'n'), 41), (('n', 'i'), 32), (('i', 'v'), 21)])
+        outcomes = list(language_model_bigram_cfd['English'].items())
+        self.assertTrue((('u', 'n'), 41) in outcomes) 
+        self.assertTrue((('n', 'i'), 32) in outcomes)
+        self.assertTrue((('i', 'v'), 21) in outcomes)
 
     def test_04_bigr_bigram_guess(self):
         text1 = "Peter had been to the office before they arrived."
