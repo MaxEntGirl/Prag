@@ -1,0 +1,34 @@
+Aufgabe 1:
+Comprehensions (2.5/2.5 Punkte)
+---------------------
+increase(): OK
+unevenSquares(): OK
+elevated(): OK
+cube_dict(): OK
+noun_len(): OK
+
+Aufgabe 3.1:
+Doctest (2/2 Punkte)
+---------------------
+dot(): OK
+normalizedTokens(): OK
+
+Aufgabe 3.2:
+Docstrings (5.5/5.5 Punkte)
+---------------------
+Perfekt, nur in SearchEngine.ranked_documents() und SearchEngine.snippets()
+fehlt vollständigkeitshalber die Beschreibung des Rückgabewerts.
+Kann ich aber drüber wegsehen (ein halber Punkt Abzug wäre hier zu viel und kleinere Einheiten verwende ich nicht)
+
+Aufgabe 4:
+Test-driven Development (8.5/9 Punkte)
+---------------------
+cosine_similarity(): OK +1P
+test_at_least_one_of_the_tokens(): OK +2P
+test_line_breaks(): OK +2P
+test_several_search(): OK +2P
+test_remove_mark(): OK +2P
+-0.5P: Den jeweiligen Test beschreibender Docstring fehlt (siehe Aufgabenstellung).
+
+Gute Arbeit
+Punkte:  18.5 von 19
