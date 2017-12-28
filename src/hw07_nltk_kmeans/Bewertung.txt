@@ -1,0 +1,17 @@
+hw07_nltk_kmeans.test_kmeans.ClusteringTest.test_01_courses                     OK        1/1 points
+hw07_nltk_kmeans.test_kmeans.ClusteringTest.test_02_normalize                   OK        1/1 points
+hw07_nltk_kmeans.test_kmeans.ClusteringTest.test_03_vocabulary                  OK        1/1 points
+hw07_nltk_kmeans.test_kmeans.ClusteringTest.test_04_vectorspaced                OK        1/1 points
+hw07_nltk_kmeans.test_kmeans.ClusteringTest.test_05_cluster                     OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_01_numberOfTokens              OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_02_vocabulary                  OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_03_size                        OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_04_richness                    OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_05_hapaxes                     OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_06_numberOfHapaxes             OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_07_avWordLength                OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_08_topSuffixes                 OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_09_topPrefixes                 OK        1/1 points
+hw07_nltk_kmeans.test_analyzer.AnalyzerTest.test_10_tokensTypical               OK        1/1 points
+####################################
+TOTAL: 15/15 points
