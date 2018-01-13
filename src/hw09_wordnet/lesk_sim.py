@@ -38,9 +38,7 @@ class LeskSimilarity(object):
     def get_definition_words(self, synset):
         # find tokens of wordnet definition of synset, ignore punctuation
         token_list = []
-        definition = synset.definition()
-        tokens = word_tokenize(definition)
-        for token in tokens:
+        for token in synset.definition().split(" "):
             if token not in self.punctuation:
                 token_list.append(token)
 
