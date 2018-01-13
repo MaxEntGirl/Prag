@@ -11,7 +11,6 @@ def get_similarity_scores(pairs):
     # in form ("word1-word2", similarity_value) e.g. ('car-automobile', 1.0)
     # save each tuple with pair and score in "results"
 
-
     results = []
 
     # iterate over all word pairs

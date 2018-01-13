@@ -8,6 +8,7 @@ def average_polysemy(part_of_speech):
     # 3. return the average polysemy of a given POS
 
     all_lemmas = set(wn.all_lemma_names(part_of_speech))
+
     #print(len(all_lemmas))
 
     meanings_length = 0
