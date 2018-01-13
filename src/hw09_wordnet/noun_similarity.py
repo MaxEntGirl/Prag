@@ -1,26 +1,43 @@
 import nltk
+from nltk.corpus import wordnet as wn
 
 
 def get_similarity_scores(pairs):
+
+    #  1. iterate over all combinations of synsets formed by the synsets of the words in the word pair
+    #  2. determine the maximum similarity score between synsets
+    #  3. save a pair and their score in tuple "max_line"
+    #  4. return results in order of decreasing similarity
+    # in form ("word1-word2", similarity_value) e.g. ('car-automobile', 1.0)
+    # save each tuple with pair and score in "results"
+
+
     results = []
 
     # iterate over all word pairs
     for pair in pairs:
+        word1 = wn.synsets(pair[0])
+        word2 = wn.synsets(pair[1])
+        #print(word1)
+        #print(word2)
 
         max_score = 0.0
         max_line = () #should look like ('food-fruit', 0.1)
 
-        #TODO 1. iterate over all combinations of synsets formed by the synsets of the words in the word pair
-        #TODO 2. determine the maximum similarity score between synsets
-        #TODO 3. save a pair and their score in tuple "max_line"
-        #in form ("word1-word2", similarity_value) e.g. ('car-automobile', 1.0)
 
-        #save each tuple with pair and score in "results"
+        for synset1 in word1:
+            for synset2 in word2:
+                similarity_value = synset1.path_similarity(synset2)
+
+                if similarity_value is not None:
+                    if similarity_value > max_score:
+                        max_score = similarity_value
+                        max_line = (pair[0] + '-' + pair[1], max_score)
         results.append(max_line)
 
-        
-    #TODO 4. return results in order of decreasing similarity
-    pass
+    return (sorted(results, key=lambda x: x[1], reverse = True))
+
+
 
 
 

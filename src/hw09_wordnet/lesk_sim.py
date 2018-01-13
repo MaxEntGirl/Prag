@@ -1,4 +1,7 @@
 import string
+import nltk
+from nltk.corpus import wordnet as wn
+from nltk import word_tokenize
 
 class LeskSimilarity(object):
     def __init__(self, synset1, synset2):
@@ -8,21 +11,46 @@ class LeskSimilarity(object):
 
     def get_overlap(self,definition_words1, definition_words2):
         #TODO find overlap in definitions, consider words occuring twice
-        pass
+
+        if len(definition_words2) > len(definition_words1):
+            count_overlap = 0
+            for token in definition_words1:
+                if token in definition_words2:
+                    count_overlap += 1
+
+            return count_overlap
+        else:
+            count_overlap = 0
+            for token in definition_words2:
+                if token in definition_words1:
+                    count_overlap += 1
+
+            return count_overlap
+
     
     def get_max_match(self,definition_words1, definition_words2):
         #TODO calculate maximum matching number (length of shortest definition)
-        pass
+        if len(definition_words1) > len(definition_words2):
+            return len(definition_words2)
+        else:
+            return len(definition_words1)
     
     def get_definition_words(self, synset):
         #TODO find tokens of wordnet definition of synset, ignore punctuation
-        pass
+        token_list = []
+        definition = synset.definition()
+        tokens = word_tokenize(definition)
+        for token in tokens:
+            if token not in self.punctuation:
+                token_list.append(token)
+
+        return token_list
     
     def score(self):
         #TODO calculate lesk similarity, use methods defined in the class
-        #definition_words1 = ...
-        #definition_words2 = ...
-        #max_match = ...
-        #overlap = ...
-        #return overlap/max_match
-        pass
+        definition_words1 = self.get_definition_words(self.synset1)
+        definition_words2 = self.get_definition_words(self.synset2)
+        max_match = self.get_max_match(definition_words1, definition_words2)
+        overlap = self.get_overlap(definition_words1, definition_words2)
+        return overlap/max_match
+
