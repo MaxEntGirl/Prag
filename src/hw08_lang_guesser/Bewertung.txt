@@ -1,0 +1,6 @@
+hw08_lang_guesser.test_lang_guesser.LangGuesserTest.test_01_models              OK        1/1 points
+hw08_lang_guesser.test_lang_guesser.LangGuesserTest.test_02_guess               OK        1/1 points
+hw08_lang_guesser.test_lang_guesser.LangGuesserTest.test_03_bigram_models       OK        2/2 points
+hw08_lang_guesser.test_lang_guesser.LangGuesserTest.test_04_bigr_bigram_guess   OK        2/2 points
+####################################
+TOTAL: 6/6 points
